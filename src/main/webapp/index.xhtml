@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+>
+<h:head/>
+<h:body>
+
+    <!-- Link to create a new tournament -->
+    <h:link value="Create New Tournament" outcome="/createTournament" />
+
+
+    <!-- Link to list all tournaments -->
+    <h:link value="View All Tournaments" outcome="/tournaments" />
+
+
+    <h:form>
+        <h:inputText value="#{teamsBean.searchQuery}" required="true" />
+        <h:commandButton value="Search" action="#{teamsBean.searchTeams}" />
+    </h:form>
+
+<!--    <h2>Search Results:</h2>-->
+<!--    <ul>-->
+<!--        <ui:repeat value="#{teamsBean.searchResults}" var="team">-->
+<!--            <li><h:link value="#{team.name}" outcome="players?teamId=#{team.id}" /></li>-->
+<!--        </ui:repeat>-->
+<!--    </ul>-->
+
+
+<!--    <h2>#{pirmasKomponentas.sakykLabas()}</h2>-->
+<!--    <h2></h2>-->
+<!--    <h:form>-->
+<!--        <h:commandButton value="Vykdyti Transakcija" action="" />-->
+<!--    </h:form>-->
+    <h2>Teams:</h2>
+    <ol>
+        <ui:repeat value="#{teams.allTeams}" var="team">
+            <li><h:link value="#{team.name}" outcome="players?teamId=#{team.id}" /></li>
+        </ui:repeat>
+    </ol>
+<!--    <h:form>-->
+<!--        <h:inputText value="#{teams.teamToCreate.name}" required="true" />-->
+<!--        <h:commandButton value="Add new team" actionListener="" action="index?faces-redirect=true"/>-->
+<!--    </h:form>-->
+<!--    <h:link outcome="myBatis/teams" value="MyBatis implementation"/>-->
+<!--    <h:outputText value="#{pirmasKomponentas.sakykLabas()}"/>-->
+<!--    <h:outputText value="#{transakcijosBean.transactionMessage}" escape="false" />-->
+<!--    #{pirmasKomponentas.getClass().name}-->
+</h:body>
+</html>

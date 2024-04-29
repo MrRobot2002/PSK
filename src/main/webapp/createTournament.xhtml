@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+    <title>Create Tournament</title>
+</h:head>
+<h:body>
+    <h:form>
+        <h:outputLabel for="tournamentName" value="Tournament Name:" />
+        <h:inputText id="tournamentName" value="#{tournamentBean.newTournament.name}" required="true" />
+        <h:commandButton value="Submit" action="#{tournamentBean.createTournament}" />
+    </h:form>
+</h:body>
+</html>
