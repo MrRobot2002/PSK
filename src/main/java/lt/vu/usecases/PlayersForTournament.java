@@ -40,5 +40,4 @@ public class PlayersForTournament {
         return tournamentsDAO.findOne(tournamentId).getPlayers();
     }
 
-    // Other methods and logic related to tournaments
 }
